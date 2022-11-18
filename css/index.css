@@ -1,0 +1,216 @@
+* {
+  position: relative; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
+
+.wrapper {
+  background-color: #eee;
+  min-height: 100vh; }
+.container{
+  display: flex
+  /* display: inline-block; */
+}
+h3{
+  margin-top: 0 !important;
+}
+.card {
+  width: 600px;
+  /* max-height: 100vh; */
+  padding: 24px 48px 48px 48px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.card2 {
+  width: 300px;
+  padding: 400px 24px 24px 24px; 
+  background-color:transparent;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  /* display:flex;
+  justify-content: center;
+  align-items: center; */
+}
+input[type="checkbox"]{
+  margin: 10px
+}
+.test{
+  background-color: rgb(146, 56, 56);
+}
+/* ======text====== */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; }
+
+.heading {
+  font-size: 24px;
+  color: #666;
+  font-weight: 700; }
+
+.h3 {
+  font-size: 20px;
+  color: #666; }
+
+.pc1{
+  z-index: 2;
+  background-color:#eee;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 10px;
+}
+.pc2{
+  z-index: 1;
+  padding: 10px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  /* background-color:rgba(255, 255, 255, 1); */
+}
+.mo2{
+  transition: 2s;
+}
+#label_pc2,#label_mo2{
+  cursor: pointer;
+}
+.selecPc{
+  position: relative;
+}
+.mac{
+  position: absolute;
+  left: 0;
+  top: -200px;
+  width: 100%;
+  /* margin: 100px; */
+  /* height: 100px; */
+  text-align: center;
+  vertical-align: center;
+}
+.mac>i{
+  font-size: 100px;
+  color: #000000;
+  opacity: 0.5;
+
+  /* background: -webkit-linear-gradient(-180deg, rgb(255, 255, 255), rgb(0, 0, 0)); */
+  /* color: linear-gradient(-180deg, rgb(255, 255, 255), rgb(0, 0, 0)); */
+   
+}
+/* Utility */
+/* ----------------------- */
+.u-text-center {
+  text-align: center !important; }
+
+.u-text-right {
+  text-align: right !important; }
+
+.u-mt-24 {
+  margin-top: 24px !important; }
+
+.u-mt-48 {
+  margin-top: 48px !important; }
+
+.u-mb-48 {
+  margin-bottom: 48px !important; }
+
+.u-mb-24 {
+  margin-bottom: 24px !important; }
+.u-mb-12 {
+  margin-bottom: 12px !important; }
+.u-mb-32 {
+  margin-bottom: 32px !important; }
+
+.u-pl-8 {
+  padding-left: 8px !important; }
+
+.u-pr-8 {
+  padding-right: 8px !important; }
+
+@media (max-width: 768px) {
+  .u-mb-24--mobile {
+    margin-bottom: 24px !important; } }
+@media (min-width: 768px) {
+  .u-pl-8--desktop {
+    padding-left: 8px !important;
+    padding-right: 8px !important; } }
+/* Form */
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="email"],
+.form input[type="url"],
+.form input[type="date"],
+.form input[type="month"],
+.form input[type="time"],
+.form input[type="datetime"],
+.form input[type="datetime-local"],
+.form input[type="week"],
+.form input[type="number"],
+.form input[type="search"],
+.form input[type="tel"],
+.form input[type="color"],
+.form select,
+.form textarea {
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 100%; }
+
+.form label {
+  margin-bottom: 8px;
+  display: inline-block;
+  vertical-align: center;
+  color: #666; }
+
+/* Btn */
+.btn {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 12px 48px;
+  color: #000;
+  border: 1px solid #999;
+  background-color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 4px;
+  line-height: 24px; }
+
+input.btn:focus {
+  outline: 0; }
+
+.btn.btn--primary {
+  /* background-color: #53db9b; */
+  background-color: #B85252;
+  color: #fff;
+  border: 0px; }
+
+.btn.btn--primary:hover {
+  /* background-color: #4bc68d;  */
+  background-color: #B85252; 
+
+}
+
+/* focus state */
+.form input[type="text"]:focus,
+.form input[type="password"]:focus,
+.form input[type="email"]:focus,
+.form input[type="url"]:focus,
+.form input[type="date"]:focus,
+.form input[type="month"]:focus,
+.form input[type="time"]:focus,
+.form input[type="datetime"]:focus,
+.form input[type="datetime-local"]:focus,
+.form input[type="week"]:focus,
+.form input[type="number"]:focus,
+.form input[type="search"]:focus,
+.form input[type="tel"]:focus,
+.form input[type="color"]:focus,
+.form select:focus,
+.form textarea:focus {
+  outline: 0;
+  border-color: #FFC4E1; }
+
+/*# sourceMappingURL=index.css.map */
+/* option:hover{
+  background-color: rgb(128, 101, 101) !important;
+  box-shadow: 0 0 10px 100px #000 inset !important;
+} */

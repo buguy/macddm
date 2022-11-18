@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mac</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+    
+    
+    <link rel="stylesheet" href="./css/solid.css"/>
+    <link rel="stylesheet" href="./css/brands.min.css"/>
+    <link rel="stylesheet" href="./css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/index.js"></script>
+    
+  </head>
+</html>
+<body>
+  <div id="app">
+    <div class="wrapper">
+      <section class="main">
+        <div class="container">
+          <div class="card u-mt-24 u-mb-24">
+            <h2 class="heading u-mb-12"></h2>
+
+            <form class="form" action="#" method="Post" name="google">
+              <div class="row">
+                <div class="col-sm-12 u-mb-24">
+
+                  <div class="u-pr-8--desktop">
+                    <h3 class="h3 u-mb-24">Mac DDM 2.0 BugList</h3>
+
+                      <div class="row u-mb-12">
+                        <div class="col-sm-4 u-mb-12">
+                          <label for="time">Time</label>
+                          <input id="time" type="text" name="Time" :value="get_time">
+                        </div>
+                        <div class="col-sm-4 u-mb-12">
+                          <span style="margin-right: 5px;">
+                            <i class="fas fa-user animate__animated animate__bounce"></i>
+                          </span>
+                          <label for="firstname">Tester</label>
+                          <input id="firstname" type="text" name="Tester"/>
+                        </div>
+                        <div class="col-sm-4">
+                          <label for="lastname">Test Case Name</label>
+                          <input id="lastname" type="text" name="Test Case Name" value="">
+                        </div>
+                      </div>
+
+                      <div class="row u-mb-12">
+                        <div class="col-sm-12 u-mb-12">
+                          <label for="descript">中文描述</label>
+                          <textarea id="descript" type="text" name="中文描述">{{ddm}} </textarea> 
+                        </div>  
+                        <div class="col-sm-12">
+                          <label for="title">Title</label>
+                          <textarea id="title" type="text" name="Title">{{ddm}} </textarea> 
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12 u-mb-24">
+                          <label for="system">System Information</label>
+                          <textarea  id="system" name="System Information" rows="10" cols="50" v-if="PC2 & Monitor2">DDPM version: {{DDMSW}}&#13;&#10;PC1 model: {{PCModel1}}&#13;&#10;OS version: {{OS1}}&#13;&#10;PC2 model: {{PCModel2}}&#13;&#10;OS version: {{OS2}}&#13;&#10;&#13;&#10;Monitor1 / FW:  &#13;&#10;Input Source: {{input1}}&#13;&#10;Monitor2 / FW:  &#13;&#10;Input Source: {{input2}}&#13;&#10;</textarea>
+                          <textarea  id="system" name="System Information" rows="10" cols="50" v-else-if="PC2">DDPM version: {{DDMSW}}&#13;&#10;PC1 model: {{PCModel1}}&#13;&#10;OS version: {{OS1}}&#13;&#10;PC2 model: {{PCModel2}}&#13;&#10;OS version: {{OS2}}&#13;&#10;&#13;&#10;Monitor1 / FW:  &#13;&#10;Input Source: {{input1}}&#13;&#10;</textarea>
+                          <textarea  id="system" name="System Information" rows="10" cols="50" v-else-if="Monitor2">DDPM version: {{DDMSW}}&#13;&#10;PC1 model: {{PCModel1}}&#13;&#10;OS version: {{OS1}} &#13;&#10;&#13;&#10;Monitor1 / FW:  &#13;&#10;Input Source: {{input1}}&#13;&#10;Monitor2 / FW:  &#13;&#10;Input Source: {{input2}}&#13;&#10;</textarea>
+                          <textarea  id="system" name="System Information" rows="10" cols="50" v-else>DDPM version: {{DDMSW}}&#13;&#10;PC1 model: {{PCModel1}}&#13;&#10;OS version: {{OS1}}&#13;&#10;&#13;&#10;Monitor1 / FW:  &#13;&#10;Input Source: {{input1}}&#13;&#10;</textarea>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12 u-mb-24">
+                          <label for="des">Description</label>
+                          <textarea  id="des" name="Description" rows="10" cols="50">1. &#13;&#10;2. &#13;&#10;3. &#13;&#10;4. &#13;&#10; &#13;&#10;Result: &#13;&#10;Expectation: </textarea>    
+                        </div>
+                        <div class="col-sm-12 u-mb-24">
+                          <label for="link">Information Link</label>
+                          <textarea  id="link" name="Information Link" rows="1" cols="50"></textarea>    
+                        </div>
+                        <div class="col-sm-12 u-text-center u-mb-24">
+                          <input id="submit" type="submit" value="Send To Google Sheet" class="btn btn--primary" name="submit"  />
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>  
+          <div class='card2 u-mt-24 u-mb-24'>
+            <form class="form" action="">
+              <div class="row">
+                <div class="selecPc  col-sm-12 u-mb-48">
+                  <div class="mac"><i class="fab fa-apple animate__animated animate__heartBeat"></i></div>
+                  <div class="pc1 u-mb-12">
+                    <!-- <h3 class="u-mb-24">PC1</h3> -->
+                    <label for="pc1">PC1 Model:</label>
+                    <select name="" class="u-mb-12" id="pc1" v-model="PCModel1">
+                      <option value='M2 MacBook Pro (13", 2022)'>M2 MacBook Pro (13", 2022)</option>
+                      <option value='M1 MacBook Pro (13", 2020)'>M1 MacBook Pro (13", 2020)</option>
+                      <option value='M1 Mac Mini (2020)'>M1 Mac Mini (2020)</option>
+                      <option value='M1 MacBook Air (2020)' >M1 MacBook Air (2020)</option>
+                      <option value="M1 MacBook Air (2020, OS13)">M1 MacBook Air (2020, OS13)</option>
+                      <option value="M1-Pro MacBook Pro (2020)">M1-Pro MacBook Pro (2020)</option>
+                      <option value='M1-Max Mac Studio' >M1-Max Mac Studio</option>
+                      <option value='non-M1 MacBook Pro(13" 2017)' >non-M1 MacBook Pro(13" 2017)</option>
+                      <option value='non-M1 MacBook Pro(13" 2019)' >non-M1 MacBook Pro(13" 2019)</option>
+                      <option value='non-M1 MacBook Pro(13" 2020)' >non-M1 MacBook Pro(13" 2020)</option>
+                      <option value="non-M1 MacBook Air" >non-M1 MacBook Air</option>
+                      <option value='non-M1 MacBook Pro(16" 2019)' >non-M1 MacBook Pro(16" 2019)</option>
+                      <option value='non-M1 Mac Mini 2018' >non-M1 Mac Mini 2018</option>
+                      <option value='non-M1 Mac Pro 2019' >non-M1 Mac Pro 2019</option>
+                    </select><br>
+                    <label for="os1">OS version:</label>
+                    <div class="u-mb-12">
+                      <os_select :pcm="PCModel1" v-on:Get-T='select_OS1'></os1_select>
+                    </div>
+                    
+                    <input type="checkbox" id="pc2" name="pc" v-model="PC2" style="display:none;">
+                    <label id="label_pc2" class="fas fa-plus-square" for="pc2"  @click="add_PC">{{del_pc}} PC</label>
+                  </div>
+
+                  <div class="pc2  animate__animated animate__slideInDown u-mb-12" v-show="PC2">  
+                    <label for="pc2 u-mb-24">PC2 Model:</label>
+                    <select name="" id="pc2" class="u-mb-12" v-model="PCModel2">
+                      <option value='M2 MacBook Pro (13", 2022)'>M2 MacBook Pro (13", 2022)</option>
+                      <option value='M1 MacBook Pro (13", 2020)'>M1 MacBook Pro (13", 2020)</option>
+                      <option value='M1 Mac Mini (2020)'>M1 Mac Mini (2020)</option>
+                      <option value='M1 MacBook Air (2020)' >M1 MacBook Air (2020)</option>
+                      <option value="M1 MacBook Air (2020, OS13)">M1 MacBook Air (2020, OS13)</option>
+                      <option value="M1-Pro MacBook Pro (2020)">M1-Pro MacBook Pro (2020)</option>
+                      <option value='M1-Max Mac Studio' >M1-Max Mac Studio</option>
+                      <option value='non-M1 MacBook Pro(13" 2017)' >non-M1 MacBook Pro(13" 2017)</option>
+                      <option value='non-M1 MacBook Pro(13" 2019)' >non-M1 MacBook Pro(13" 2019)</option>
+                      <option value='non-M1 MacBook Pro(13" 2020)' >non-M1 MacBook Pro(13" 2020)</option>
+                      <option value="non-M1 MacBook Air" >non-M1 MacBook Air</option>
+                      <option value='non-M1 MacBook Pro(16" 2019)' >non-M1 MacBook Pro(16" 2019)</option>
+                      <option value='non-M1 Mac Mini 2018' >non-M1 Mac Mini 2018</option>
+                      <option value='non-M1 Mac Pro 2019' >non-M1 Mac Pro 2019</option>
+                    </select><br>
+                    <label for="os2">OS version:</label>
+                    <div class="">
+                      <os_select :pcm="PCModel2" v-on:Get-T='select_OS2'></os_select>
+                    </div>
+                    
+                  </div>
+                  <!-- <input type="checkbox" id="pc2" name="pc" v-model="PC2" style="display:none;">
+                  <label id="label_pc2" class="fas fa-plus-square" for="pc2"  @click="add_PC">{{del_pc}} PC</label> -->
+                  <div class="mo2">
+                    <input type="checkbox" id="mo2" name="monitor" v-model="Monitor2" style="display:none;">
+                    <label id="label_mo2" class="fas fa-plus-square animate__animated animate__slideInDown" for="mo2" @click="add_Monitor"> {{del_mo}} Monitor</label><br>
+                  </div>
+                </div>
+
+              </div>
+              
+            
+            </form>  
+          </div>
+          
+          
+          
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>  
+</body>
